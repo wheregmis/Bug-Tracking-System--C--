@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using BugTrackingSystem.com.bugtracking.model;
 
 namespace BugTrackingSystem.com.bugtracking.views
 {
     public partial class SignUp : MaterialForm
     {
+        private User user;
         public SignUp()
         {
             InitializeComponent();
@@ -31,6 +33,20 @@ namespace BugTrackingSystem.com.bugtracking.views
             );
         }
 
-       
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            string theDate = dob.Value.ToString("yyyy-MM-dd");
+            string firstname = txtFirstName.Text;
+            string username = txtUsername.Text;
+            string email = txtEmail.Text;
+            string address = txtAddress.Text;
+            string gender = txtGender.Text;
+            string lastname = txtLastName.Text;
+            
+            
+            user = new User("Sabin");
+            MessageBox.Show(user.getFirstName());
+
+    }
     }
 }

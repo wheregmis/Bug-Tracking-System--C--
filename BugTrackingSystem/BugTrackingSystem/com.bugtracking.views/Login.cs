@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BugTrackingSystem.com.bugtracking.dbconnection;
+using BugTrackingSystem.com.bugtracking.model;
 using BugTrackingSystem.com.bugtracking.views;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -15,11 +17,12 @@ namespace BugTrackingSystem
 {
     public partial class Registration : MaterialForm
     {
+        
 
         public Registration()
         {
             InitializeComponent();
-
+           // new Database().listUsers();
             txtPassword.PasswordChar = '*';
             
             // Create a material theme manager and add the form to manage (this)
@@ -49,6 +52,19 @@ namespace BugTrackingSystem
         public void disposeFrame() {
             Registration reg = new Registration();
             reg.Close();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+           Boolean validate = new Database().LoginValidate(txtUsername.Text, txtPassword.Text);
+           if (validate)
+         {
+              MessageBox.Show("Login Successful");
+       
+           }
+         else {
+              MessageBox.Show("Login UnSucessfull");
+            }
         }
     }
 }

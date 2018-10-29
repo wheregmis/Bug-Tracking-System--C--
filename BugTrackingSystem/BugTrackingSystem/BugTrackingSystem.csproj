@@ -36,6 +36,7 @@
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="com.bugtracking.dbconnection\Database.cs" />
+    <Compile Include="com.bugtracking.model\User.cs" />
     <Compile Include="com.bugtracking.views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,8 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="com.bugtracking.controller\" />
-    <Folder Include="com.bugtracking.dbconnection\" />
-    <Folder Include="com.bugtracking.model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

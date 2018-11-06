@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BugTrackingSystem.com.bugtracking.dbconnection;
+using BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpanel;
+using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,16 +11,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
-using MaterialSkin;
-using BugTrackingSystem.com.bugtracking.model;
 
 namespace BugTrackingSystem.com.bugtracking.views
 {
-    public partial class SignUp : MaterialForm
+    public partial class AdminDashboard : MaterialForm
     {
-        private User user;
-        public SignUp()
+       
+        public AdminDashboard()
         {
             InitializeComponent();
 
@@ -30,23 +31,29 @@ namespace BugTrackingSystem.com.bugtracking.views
                 Primary.Grey800, Primary.Grey700,
                 Primary.Grey800, Accent.LightBlue100,
                 TextShade.WHITE
+
+               
+
             );
+
+            this.WindowState = FormWindowState.Maximized;
+            
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            string theDate = dob.Value.ToString("yyyy-MM-dd");
-            string firstname = txtFirstName.Text;
-            string username = txtUsername.Text;
-            string email = txtEmail.Text;
-            string address = txtAddress.Text;
-            string gender = txtGender.Text;
-            string lastname = txtLastName.Text;
-            
-            
-            user = new User("Sabin");
-            MessageBox.Show(user.getFirstName());
+            new Database().SystemClose();
+        }
 
-    }
+        private void AdminDashboard_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string query = "select * from tbl_users";
+            new Database().getData(query);
+        }
     }
 }

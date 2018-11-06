@@ -10,21 +10,24 @@ using System.Windows.Forms;
 using BugTrackingSystem.com.bugtracking.dbconnection;
 using BugTrackingSystem.com.bugtracking.model;
 using BugTrackingSystem.com.bugtracking.views;
+using BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using System.Threading;
 
 namespace BugTrackingSystem
 {
-    public partial class Registration : MaterialForm
+    public partial class Login : MaterialForm
     {
-        
 
-        public Registration()
+        
+        public Login()
         {
             InitializeComponent();
-           // new Database().listUsers();
+            // new Database().listUsers();
+
             txtPassword.PasswordChar = '*';
-            
+
             // Create a material theme manager and add the form to manage (this)
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -38,33 +41,32 @@ namespace BugTrackingSystem
             );
         }
 
-        private void btnSignUp_Click(object sender, EventArgs e)
-        {
-            SignUp signUp = new SignUp();
-            signUp.Show();
-            //this.Hide();
 
-            
-            
-            
-        }
-
-        public void disposeFrame() {
-            Registration reg = new Registration();
-            reg.Close();
-        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           Boolean validate = new Database().LoginValidate(txtUsername.Text, txtPassword.Text);
-           if (validate)
-         {
-              MessageBox.Show("Login Successful");
-       
-           }
-         else {
-              MessageBox.Show("Login UnSucessfull");
+            String validate = new Database().LoginValidate(txtUsername.Text, txtPassword.Text);
+            if (validate == "No")
+            {
+                MessageBox.Show("Login UnSucessfull");
+
+            }
+            else
+            {
+                if (validate == "1")
+                {
+                    
+                    new AdminDashboard().Show();
+                    this.Hide();
+                }
+                if (validate == "2")
+                {
+                    new UserDashboard().Show();
+                    this.Hide();
+                }
             }
         }
+
+        
     }
 }

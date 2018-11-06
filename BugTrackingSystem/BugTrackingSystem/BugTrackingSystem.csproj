@@ -50,27 +50,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="com.bugtracking.dbconnection\Database.cs" />
+    <Compile Include="com.bugtracking.controller\BugController.cs" />
+    <Compile Include="com.bugtracking.controller\ProjectController.cs" />
+    <Compile Include="com.bugtracking.controller\UserController.cs" />
+    <Compile Include="com.bugtracking.dbconnection\config.xml.cs" />
+    <Compile Include="com.bugtracking.model\Bug.cs" />
+    <Compile Include="com.bugtracking.model\Project.cs" />
     <Compile Include="com.bugtracking.model\User.cs" />
-    <Compile Include="com.bugtracking.views\Login.cs">
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="com.bugtracking.views\Login.Designer.cs">
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageBugs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageBugs.Designer.cs">
+      <DependentUpon>ManageBugs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageProjects.Designer.cs">
+      <DependentUpon>ManageProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageUsers.Designer.cs">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="com.bugtracking.views\SignUp.cs">
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\UserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="com.bugtracking.views\SignUp.Designer.cs">
-      <DependentUpon>SignUp.cs</DependentUpon>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\UserDashboard.Designer.cs">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="com.bugtracking.views\Login.resx">
+    <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.adminpanel\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.userpanel\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="com.bugtracking.views\SignUp.resx">
-      <DependentUpon>SignUp.cs</DependentUpon>
+    <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.userpanel\UserDashboard.resx">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,8 +127,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="com.bugtracking.controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

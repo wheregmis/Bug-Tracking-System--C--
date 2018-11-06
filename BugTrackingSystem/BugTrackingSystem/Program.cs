@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace BugTrackingSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Registration());
+            Application.Run(new Login());
         }
     }
 }

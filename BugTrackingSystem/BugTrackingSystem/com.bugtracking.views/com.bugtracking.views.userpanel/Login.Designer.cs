@@ -1,6 +1,6 @@
 ﻿namespace BugTrackingSystem
 {
-    partial class Registration
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,6 @@
             this.txtUsername = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.btnSignUp = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -112,34 +111,17 @@
             this.materialLabel2.TabIndex = 3;
             this.materialLabel2.Text = "Password";
             // 
-            // btnSignUp
-            // 
-            this.btnSignUp.AutoSize = true;
-            this.btnSignUp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSignUp.Depth = 0;
-            this.btnSignUp.Icon = null;
-            this.btnSignUp.Location = new System.Drawing.Point(591, 359);
-            this.btnSignUp.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Primary = true;
-            this.btnSignUp.Size = new System.Drawing.Size(83, 36);
-            this.btnSignUp.TabIndex = 5;
-            this.btnSignUp.Text = "SignUp";
-            this.btnSignUp.UseVisualStyleBackColor = true;
-            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
-            // 
-            // Registration
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 573);
-            this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.btnLogin);
-            this.Name = "Registration";
+            this.Name = "Login";
             this.Text = "Login";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
@@ -154,7 +136,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtUsername;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPassword;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialRaisedButton btnSignUp;
     }
 }
 

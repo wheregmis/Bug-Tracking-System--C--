@@ -11,6 +11,11 @@ C:\Users\xawbe\source\repos\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTra
 C:\Users\xawbe\source\repos\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
 C:\Users\xawbe\source\repos\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Registration.resources
 C:\Users\xawbe\source\repos\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.SignUp.resources
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.adminDashboard.resources
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Properties.Resources.resources
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.GenerateResource.cache
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csprojAssemblyReference.cache
 C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe.config
 C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe
 C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.pdb
@@ -18,12 +23,8 @@ C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTr
 C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\bin\Debug\MySql.Data.dll
 C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\bin\Debug\Google.Protobuf.dll
 C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\bin\Debug\MySql.Data.xml
-C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csprojAssemblyReference.cache
-C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Registration.resources
-C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.SignUp.resources
-C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Properties.Resources.resources
-C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.GenerateResource.cache
-C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
 C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CopyComplete
 C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
 C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Login.resources
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel.UserDashboard.resources

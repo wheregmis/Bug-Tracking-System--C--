@@ -41,8 +41,7 @@ namespace BugTrackingSystem
             );
         }
 
-
-
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
             String validate = new Database().LoginValidate(txtUsername.Text, txtPassword.Text);

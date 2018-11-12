@@ -67,9 +67,6 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
 
         public String LoginValidate(String username, String password) {
 
-            
-
-
              String query = "SELECT * FROM tbl_users WHERE userName='"+username+"' and userPassword='"+password+"'";
 
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -107,30 +104,27 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
 
         public DataTable getData(String query)
         {
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+
             try
             {
-                SqlDataAdapter ada = new SqlDataAdapter(query, databaseConnection.ToString());
-                DataTable dt = new DataTable();
-                ada.Fill(dt);
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    Console.WriteLine(dt.Rows[i]);
-                }
-                return dt;
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                var dataTable = new DataTable();
+                dataTable.Load(reader);
+                return dataTable;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return null;
             }
         }
 
-        public void insertData() {
-            //  string query = "INSERT INTO user(`userName`, `firstName`, `lastName`, `userEmail`, `userPassword`, `userAddress`, `birthDate`, `gender`) VALUES ('" + test + "', '" + test + "', '" + test + "', '" + test + "', '" + test + "', '" + test + "', '" + test + "', '" + test + "')";
-            // Which could be translated manually to :
-            // INSERT INTO user(`id`, `first_name`, `last_name`, `address`) VALUES (NULL, 'Bruce', 'Wayne', 'Wayne Manor')
-
-            String query = "";
-
+        public void insertData(String query) {
+            
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
 

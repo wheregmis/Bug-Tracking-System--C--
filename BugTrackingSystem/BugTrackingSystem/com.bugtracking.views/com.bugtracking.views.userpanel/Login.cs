@@ -14,6 +14,7 @@ using BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Threading;
+using BugTrackingSystem.com.bugtracking.controller;
 
 namespace BugTrackingSystem
 {
@@ -44,7 +45,7 @@ namespace BugTrackingSystem
         
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            String validate = new Database().LoginValidate(txtUsername.Text, txtPassword.Text);
+            String validate = new Database().LoginValidate(txtEmail.Text, txtPassword.Text);
             if (validate == "No")
             {
                 MessageBox.Show("Login UnSucessfull");
@@ -54,13 +55,26 @@ namespace BugTrackingSystem
             {
                 if (validate == "1")
                 {
+                    DataTable dt = new UserController().GetUserDetails(txtEmail.Text);
+
+                    int id = dt.Rows[0].Field<int>("userID");
                     
-                    new AdminDashboard().Show();
+                    String email = dt.Rows[0].Field<String>("userEmail");
+                     
+
+                    new AdminDashboard(email).Show();
                     this.Hide();
                 }
                 if (validate == "2")
                 {
-                    new UserDashboard().Show();
+                    DataTable dt = new UserController().GetUserDetails(txtEmail.Text);
+
+                    int id = dt.Rows[0].Field<int>("userID");
+
+                    String email = dt.Rows[0].Field<String>("userEmail");
+                    
+
+                    new UserDashboard(email).Show();
                     this.Hide();
                 }
             }

@@ -1,4 +1,6 @@
-﻿using BugTrackingSystem.com.bugtracking.dbconnection;
+﻿using BugTrackingSystem.com.bugtracking.controller;
+using BugTrackingSystem.com.bugtracking.dbconnection;
+using BugTrackingSystem.com.bugtracking.model;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -15,7 +17,8 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
 {
     public partial class UserDashboard : MaterialForm
     {
-        public UserDashboard()
+        Image File;
+        public UserDashboard(String email)
         {
             InitializeComponent();
             // Create a material theme manager and add the form to manage (this)
@@ -39,6 +42,45 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
         private void btnClose_Click(object sender, EventArgs e)
         {
             new Database().SystemClose();
+        }
+
+        
+
+        private void materialLabel9_Click(object sender, EventArgs e)
+        {
+            
+            OpenFileDialog f = new OpenFileDialog();
+            f.Filter = "Image files (*.jpg, *.png) | *.jpg; *.png";
+
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                this.File = Image.FromFile(f.FileName);
+
+
+            }
+        }
+
+        private void listUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            String bugTitle = txtBugTitle.Text;
+            String project = txtProject.Text;
+            String line = txtLine.Text;
+            String method = txtMethod.Text;
+            String bugClass = txtClass.Text;
+            String notes = txtNotes.Text;
+            String code = txtSourceCode.Text;
+            String priority = cmbPriority.SelectedItem.ToString();
+            String date = DateTime.Now.ToString("dd.MM.yyy");
+            String reportedBy = "";
+
+            Bug b = new Bug(bugTitle, project, line, method, bugClass, notes, code, this.File, priority, date, reportedBy);
+            new BugController().InsertBug(b);
+
         }
     }
 }

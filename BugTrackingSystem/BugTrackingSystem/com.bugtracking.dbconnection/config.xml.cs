@@ -65,9 +65,9 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
         }
 
 
-        public String LoginValidate(String username, String password) {
+        public String LoginValidate(String email, String password) {
 
-             String query = "SELECT * FROM tbl_users WHERE userName='"+username+"' and userPassword='"+password+"'";
+             String query = "SELECT * FROM tbl_users WHERE userEmail='"+email+"' and userPassword='"+password+"'";
 
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -134,6 +134,26 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
                 MySqlDataReader myReader = commandDatabase.ExecuteReader();
 
                 MessageBox.Show("User succesfully registered");
+
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void updateData(String query) {
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+
+                MessageBox.Show("User succesfully Updated");
 
                 databaseConnection.Close();
             }

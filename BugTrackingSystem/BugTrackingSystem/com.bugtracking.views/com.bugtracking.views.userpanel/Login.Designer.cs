@@ -30,7 +30,7 @@
         {
             this.btnLogin = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtUsername = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
@@ -60,26 +60,26 @@
             this.materialLabel1.Location = new System.Drawing.Point(288, 193);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(95, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(58, 24);
             this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "Username";
+            this.materialLabel1.Text = "Email";
             // 
-            // txtUsername
+            // txtEmail
             // 
-            this.txtUsername.Depth = 0;
-            this.txtUsername.Hint = "";
-            this.txtUsername.Location = new System.Drawing.Point(591, 189);
-            this.txtUsername.MaxLength = 32767;
-            this.txtUsername.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.PasswordChar = '\0';
-            this.txtUsername.SelectedText = "";
-            this.txtUsername.SelectionLength = 0;
-            this.txtUsername.SelectionStart = 0;
-            this.txtUsername.Size = new System.Drawing.Size(188, 28);
-            this.txtUsername.TabIndex = 2;
-            this.txtUsername.TabStop = false;
-            this.txtUsername.UseSystemPasswordChar = false;
+            this.txtEmail.Depth = 0;
+            this.txtEmail.Hint = "";
+            this.txtEmail.Location = new System.Drawing.Point(591, 189);
+            this.txtEmail.MaxLength = 32767;
+            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(188, 28);
+            this.txtEmail.TabIndex = 2;
+            this.txtEmail.TabStop = false;
+            this.txtEmail.UseSystemPasswordChar = false;
             // 
             // txtPassword
             // 
@@ -118,7 +118,7 @@
             this.ClientSize = new System.Drawing.Size(1055, 573);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.btnLogin);
             this.Name = "Login";
@@ -133,7 +133,7 @@
 
         private MaterialSkin.Controls.MaterialRaisedButton btnLogin;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtUsername;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtEmail;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPassword;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
     }

@@ -19,23 +19,25 @@ namespace BugTrackingSystem.com.bugtracking.controller
             
         }
 
-        public DataTable GetUserDetails(String username) {
+        public DataTable GetUserDetails(String email) {
 
-            String query = "select * from tbl_users where username = '"+username+"'";
+            String query = "select * from tbl_users where userEmail = '"+email+"'";
             DataTable dt = new Database().getData(query);
             return dt;
         }
 
         public void InsertUser(User u)
         {
-            string query = "INSERT INTO tbl_users(`userName`, `firstName`, `lastName`, `userEmail`, `userPassword`, `userAddress`, `birthDate`, `gender`, `userRole`, `userType`) VALUES ('" + u.Username + "', '" + u.FirstName + "', '" + u.LastName + "', '" + u.Email + "', '" + u.Password + "', '" + u.Address + "', '" + u.Dob + "', '" + u.Gender + "', '" + u.Userrole + "', 2)";
+            string query = "INSERT INTO tbl_users(`firstName`, `lastName`, `userEmail`, `userPassword`, `userAddress`, `birthDate`, `gender`, `userRole`, `userType`) VALUES ('" + u.Firstname + "', '" + u.Lastname + "', '" + u.Email + "', '" + u.Password + "', '" + u.Address + "', '" + u.Dob + "', '" + u.Gender + "', '" + u.Userrole + "', 2)";
             Console.WriteLine(query);
             new Database().insertData(query);
 
         }
 
-        public void UpdateUser() {
-
+        public void UpdateUser(User u) {
+            string query = "UPDATE `tbl_users` SET `firstName` = '"+u.Firstname+"', `lastName` = '"+u.Lastname+"', `userRole` = '"+u.Userrole+"', `userEmail` = '"+u.Email+"', `userPassword` = '"+u.Password+"', `userAddress` = '"+u.Address+"' WHERE `userEmail` = '"+u.Email+"'";
+            Console.WriteLine(query);
+           new Database().updateData(query);
         }
 
     }

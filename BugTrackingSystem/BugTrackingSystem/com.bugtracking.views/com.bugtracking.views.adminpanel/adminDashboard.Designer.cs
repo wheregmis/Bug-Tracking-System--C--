@@ -28,51 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cmbUserRole = new System.Windows.Forms.ComboBox();
             this.listUser = new MaterialSkin.Controls.MaterialListView();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.dateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtLastName = new System.Windows.Forms.TextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.cmbUserRole = new System.Windows.Forms.ComboBox();
-            this.tabControl1.SuspendLayout();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // materialRaisedButton1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(1, 90);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(20, 20, 50, 50);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.Padding = new System.Drawing.Point(20, 20);
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1430, 574);
-            this.tabControl1.TabIndex = 1;
+            this.materialRaisedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialRaisedButton1.AutoSize = true;
+            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Icon = null;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(1389, 25);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(33, 36);
+            this.materialRaisedButton1.TabIndex = 2;
+            this.materialRaisedButton1.Text = "x";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.White;
+            this.tabPage3.Location = new System.Drawing.Point(4, 59);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(10);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(10);
+            this.tabPage3.Size = new System.Drawing.Size(1422, 511);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Manage Bugs";
             // 
             // tabPage1
             // 
@@ -80,22 +89,20 @@
             this.tabPage1.Controls.Add(this.listUser);
             this.tabPage1.Controls.Add(this.btnUpdate);
             this.tabPage1.Controls.Add(this.btnAdd);
+            this.tabPage1.Controls.Add(this.txtAddress);
+            this.tabPage1.Controls.Add(this.txtPassword);
+            this.tabPage1.Controls.Add(this.txtEmail);
+            this.tabPage1.Controls.Add(this.txtLastName);
+            this.tabPage1.Controls.Add(this.txtFirstName);
             this.tabPage1.Controls.Add(this.cmbGender);
             this.tabPage1.Controls.Add(this.dateOfBirth);
             this.tabPage1.Controls.Add(this.materialLabel9);
-            this.tabPage1.Controls.Add(this.txtAddress);
             this.tabPage1.Controls.Add(this.materialLabel7);
             this.tabPage1.Controls.Add(this.materialLabel8);
             this.tabPage1.Controls.Add(this.materialLabel5);
-            this.tabPage1.Controls.Add(this.txtPassword);
             this.tabPage1.Controls.Add(this.materialLabel6);
-            this.tabPage1.Controls.Add(this.txtEmail);
             this.tabPage1.Controls.Add(this.materialLabel3);
-            this.tabPage1.Controls.Add(this.txtUsername);
-            this.tabPage1.Controls.Add(this.materialLabel4);
-            this.tabPage1.Controls.Add(this.txtLastName);
             this.tabPage1.Controls.Add(this.materialLabel2);
-            this.tabPage1.Controls.Add(this.txtFirstName);
             this.tabPage1.Controls.Add(this.materialLabel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 59);
             this.tabPage1.Name = "tabPage1";
@@ -104,6 +111,18 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Manage Users";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // cmbUserRole
+            // 
+            this.cmbUserRole.FormattingEnabled = true;
+            this.cmbUserRole.Items.AddRange(new object[] {
+            "Developer",
+            "Tester",
+            "Programmer"});
+            this.cmbUserRole.Location = new System.Drawing.Point(221, 258);
+            this.cmbUserRole.Name = "cmbUserRole";
+            this.cmbUserRole.Size = new System.Drawing.Size(159, 24);
+            this.cmbUserRole.TabIndex = 22;
             // 
             // listUser
             // 
@@ -137,6 +156,7 @@
             this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "Update User";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -153,6 +173,41 @@
             this.btnAdd.Text = "Add User";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(221, 342);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(159, 22);
+            this.txtAddress.TabIndex = 15;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(221, 220);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(159, 22);
+            this.txtPassword.TabIndex = 9;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(221, 181);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(159, 22);
+            this.txtEmail.TabIndex = 7;
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(221, 98);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(159, 22);
+            this.txtLastName.TabIndex = 3;
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(221, 58);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(159, 22);
+            this.txtFirstName.TabIndex = 1;
             // 
             // cmbGender
             // 
@@ -185,13 +240,6 @@
             this.materialLabel9.Size = new System.Drawing.Size(115, 24);
             this.materialLabel9.TabIndex = 16;
             this.materialLabel9.Text = "Date of Birth";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(221, 342);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(159, 22);
-            this.txtAddress.TabIndex = 15;
             // 
             // materialLabel7
             // 
@@ -232,13 +280,6 @@
             this.materialLabel5.TabIndex = 10;
             this.materialLabel5.Text = "User Role";
             // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(221, 220);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(159, 22);
-            this.txtPassword.TabIndex = 9;
-            // 
             // materialLabel6
             // 
             this.materialLabel6.AutoSize = true;
@@ -251,13 +292,6 @@
             this.materialLabel6.Size = new System.Drawing.Size(94, 24);
             this.materialLabel6.TabIndex = 8;
             this.materialLabel6.Text = "Password";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(221, 181);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(159, 22);
-            this.txtEmail.TabIndex = 7;
             // 
             // materialLabel3
             // 
@@ -272,33 +306,6 @@
             this.materialLabel3.TabIndex = 6;
             this.materialLabel3.Text = "Email";
             // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(221, 141);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(159, 22);
-            this.txtUsername.TabIndex = 5;
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(21, 139);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(95, 24);
-            this.materialLabel4.TabIndex = 4;
-            this.materialLabel4.Text = "Username";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(221, 98);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(159, 22);
-            this.txtLastName.TabIndex = 3;
-            // 
             // materialLabel2
             // 
             this.materialLabel2.AutoSize = true;
@@ -311,13 +318,6 @@
             this.materialLabel2.Size = new System.Drawing.Size(102, 24);
             this.materialLabel2.TabIndex = 2;
             this.materialLabel2.Text = "Last Name";
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(221, 58);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(159, 22);
-            this.txtFirstName.TabIndex = 1;
             // 
             // materialLabel1
             // 
@@ -332,55 +332,20 @@
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "First Name";
             // 
-            // tabPage2
+            // tabControl1
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 59);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1422, 511);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Manage Projects";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Location = new System.Drawing.Point(4, 59);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(10);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(10);
-            this.tabPage3.Size = new System.Drawing.Size(1422, 511);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Manage Bugs";
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(1389, 25);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(33, 36);
-            this.materialRaisedButton1.TabIndex = 2;
-            this.materialRaisedButton1.Text = "x";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
-            // 
-            // cmbUserRole
-            // 
-            this.cmbUserRole.FormattingEnabled = true;
-            this.cmbUserRole.Items.AddRange(new object[] {
-            "Developer",
-            "Tester",
-            "Programmer"});
-            this.cmbUserRole.Location = new System.Drawing.Point(221, 258);
-            this.cmbUserRole.Name = "cmbUserRole";
-            this.cmbUserRole.Size = new System.Drawing.Size(159, 24);
-            this.cmbUserRole.TabIndex = 22;
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(1, 90);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(20, 20, 50, 50);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(20, 20);
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1430, 574);
+            this.tabControl1.TabIndex = 1;
             // 
             // AdminDashboard
             // 
@@ -393,41 +358,37 @@
             this.Name = "AdminDashboard";
             this.Text = "Admin Dashboard";
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
-            this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ComboBox cmbUserRole;
+        private MaterialSkin.Controls.MaterialListView listUser;
+        private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAdd;
         private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.DateTimePicker dateOfBirth;
+        private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private System.Windows.Forms.TextBox txtPassword;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private System.Windows.Forms.TextBox txtEmail;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private System.Windows.Forms.TextBox txtUsername;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.TextBox txtLastName;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.TextBox txtFirstName;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel9;
-        private System.Windows.Forms.ComboBox cmbGender;
-        private System.Windows.Forms.DateTimePicker dateOfBirth;
-        private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
-        private MaterialSkin.Controls.MaterialRaisedButton btnAdd;
-        private MaterialSkin.Controls.MaterialListView listUser;
-        private System.Windows.Forms.ComboBox cmbUserRole;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }

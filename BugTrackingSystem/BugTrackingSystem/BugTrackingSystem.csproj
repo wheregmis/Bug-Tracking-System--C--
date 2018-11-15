@@ -51,35 +51,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="com.bugtracking.controller\BugController.cs" />
-    <Compile Include="com.bugtracking.controller\ProjectController.cs" />
     <Compile Include="com.bugtracking.controller\UserController.cs" />
     <Compile Include="com.bugtracking.dbconnection\config.xml.cs" />
     <Compile Include="com.bugtracking.model\Bug.cs" />
-    <Compile Include="com.bugtracking.model\Project.cs" />
     <Compile Include="com.bugtracking.model\User.cs" />
     <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageBugs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageBugs.Designer.cs">
-      <DependentUpon>ManageBugs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageProjects.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageProjects.Designer.cs">
-      <DependentUpon>ManageProjects.cs</DependentUpon>
-    </Compile>
-    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageUsers.Designer.cs">
-      <DependentUpon>ManageUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\Login.cs">
       <SubType>Form</SubType>

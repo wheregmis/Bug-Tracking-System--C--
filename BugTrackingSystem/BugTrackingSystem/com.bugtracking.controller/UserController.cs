@@ -35,9 +35,15 @@ namespace BugTrackingSystem.com.bugtracking.controller
         }
 
         public void UpdateUser(User u) {
-            string query = "UPDATE `tbl_users` SET `firstName` = '"+u.Firstname+"', `lastName` = '"+u.Lastname+"', `userRole` = '"+u.Userrole+"', `userEmail` = '"+u.Email+"', `userPassword` = '"+u.Password+"', `userAddress` = '"+u.Address+"' WHERE `userEmail` = '"+u.Email+"'";
+            string query = "UPDATE `tbl_users` SET `firstName` = '"+u.Firstname+"', `lastName` = '"+u.Lastname+"', `userRole` = '"+u.Userrole+"', `userEmail` = '"+u.Email+"', `userPassword` = '"+u.Password+"', `userAddress` = '"+u.Address+"' WHERE `userID` = '"+u.Id+"'";
             Console.WriteLine(query);
            new Database().updateData(query);
+        }
+
+        public void DeleteUser(User u) {
+            string query = "Delete from tbl_users where userID = " + u.Id;
+            Console.WriteLine(query);
+            new Database().DeleteData(query);
         }
 
     }

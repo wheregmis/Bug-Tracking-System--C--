@@ -164,6 +164,26 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
             }
         }
 
+        public void DeleteData(String query) {
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+
+                MessageBox.Show("User succesfully Updated");
+
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public void SystemClose()
         {
             if (System.Windows.Forms.Application.MessageLoop)
@@ -177,6 +197,12 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
                 System.Environment.Exit(1);
             }
         }
+
+        public void fillComb() {
+
+            
+        }
+
     }
 
     

@@ -15,6 +15,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Threading;
 using BugTrackingSystem.com.bugtracking.controller;
+using BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpanel;
 
 namespace BugTrackingSystem
 {
@@ -62,7 +63,7 @@ namespace BugTrackingSystem
                     String email = dt.Rows[0].Field<String>("userEmail");
                      
 
-                    new AdminDashboard(email).Show();
+                    new AdminPage(email).Show();
                     this.Hide();
                 }
                 if (validate == "2")
@@ -74,12 +75,15 @@ namespace BugTrackingSystem
                     String email = dt.Rows[0].Field<String>("userEmail");
                     
 
-                    new UserDashboard(email).Show();
+                    new ReportBugs(email).Show();
                     this.Hide();
                 }
             }
         }
 
-        
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

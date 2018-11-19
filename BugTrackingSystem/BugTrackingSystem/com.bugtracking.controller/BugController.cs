@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,17 +14,19 @@ namespace BugTrackingSystem.com.bugtracking.controller
     {
         public void InsertBug(Bug b)
         {
-          //  string query = "INSERT INTO tbl_users(`userName`, `firstName`, `lastName`, `userEmail`, `userPassword`, `userAddress`, `birthDate`, `gender`, `userRole`, `userType`) VALUES ('" + u.Username + "', '" + u.FirstName + "', '" + u.LastName + "', '" + u.Email + "', '" + u.Password + "', '" + u.Address + "', '" + u.Dob + "', '" + u.Gender + "', '" + u.Userrole + "', 2)";
-         //   Console.WriteLine(query);
-         //   new Database().insertData(query);
+            ImageConverter imgc = new ImageConverter();
+            byte[] img = (byte[])imgc.ConvertTo(b.File, Type.GetType("System.Byte[]"));
+            string query = "INSERT INTO `tbl_bugs` (`bugID`, `bugTitle`, `project`, `line`, `method`, `class`, `notes`, `sourceCode`, `screenshot`, `priority`, `resolved`, `comments`, `reportDate`, `reportedBy`, `resolvedBy`) VALUES (NULL, '"+b.BugTitle+"', '"+b.Project+"', '15', '"+b.Method+"', '"+b.BugClass+"', '"+b.Notes+ "', '" + b.Code + "','" +img+ "', '"+b.Priority+"', '', '', '"+b.Date+"', '"+b.ReportedBy+"', '')";
+            Console.WriteLine(query);
+            new Database().insertData(query);
         }
 
-        public void GetAllBugs()
+        public DataTable GetAllBugs()
         {
-            string query = "select * from tbl_users";
+            string query = "select * from tbl_bugs";
 
             DataTable dt = new Database().getData(query);
-
+            return dt;
         }
 
         public DataTable GetYourBugs(String username)
@@ -41,6 +44,15 @@ namespace BugTrackingSystem.com.bugtracking.controller
            // string query = "UPDATE `tbl_users` SET `firstName` = '" + u.FirstName + "', `lastName` = '" + u.LastName + "', `userRole` = '" + u.Userrole + "', `userEmail` = '" + u.Email + "', `userPassword` = '" + u.Password + "', `userAddress` = '" + u.Address + "' WHERE `userName` = '" + u.Username + "'";
           //  Console.WriteLine(query);
           //  new Database().updateData(query);
+        }
+
+        public DataTable FillCombProject() {
+            
+                string query = "select projectName from tbl_projects";
+
+                DataTable dt = new Database().getData(query);
+            return dt;
+               
         }
     }
 }

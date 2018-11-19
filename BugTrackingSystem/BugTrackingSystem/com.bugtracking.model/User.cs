@@ -18,15 +18,20 @@ namespace BugTrackingSystem.com.bugtracking.model
         private string address;
         private string dob;
         private string gender;
-        private string email1;
+        
 
         public User(string email)
         {
             this.email = email;
         }
-
-        public User(string firstname, string lastname, string email1, string password, string address, string userrole)
+        public User(int id)
         {
+            this.id = id;
+        }
+
+        public User(int id, string firstname, string lastname, string email1, string password, string address, string userrole)
+        {
+            this.id = id;
             this.firstname = firstname;
             this.lastname = lastname;
             this.email = email1;
@@ -35,8 +40,9 @@ namespace BugTrackingSystem.com.bugtracking.model
             this.userrole = userrole;
         }
 
-        public User(string email, string lastname, string email1, string password, string address, string gender, string userrole, string dob)
+        public User(string firstname, string lastname, string email1, string password, string address, string gender, string userrole, string dob)
         {
+            this.firstname = firstname;
             this.lastname = lastname;
             this.email = email1;
             this.password = password;

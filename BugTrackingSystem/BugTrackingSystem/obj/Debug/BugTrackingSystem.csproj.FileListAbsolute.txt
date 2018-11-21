@@ -34,3 +34,16 @@ C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTr
 C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpanel.ManageBugs.resources
 C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel.ReportBugs.resources
 C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel.BugDetail.resources
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\bin\Debug\NativeBinaries\amd64\git2-e0902fb.dll
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\bin\Debug\NativeBinaries\amd64\git2-e0902fb.pdb
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\bin\Debug\NativeBinaries\x86\git2-e0902fb.dll
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\bin\Debug\NativeBinaries\x86\git2-e0902fb.pdb
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\bin\Debug\LibGit2Sharp.dll
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\bin\Debug\LibGit2Sharp.xml
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpanel.GitForm.resources
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel.CodeView.resources
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel.ImageView.resources
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel.UserDashboard.resources
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel.UserProfile.resources
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel.BugList.resources
+C:\Users\xawbe\Documents\GitHub\Bug-Tracking-System--C--\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel.AllBugs.resources

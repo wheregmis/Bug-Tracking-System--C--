@@ -40,6 +40,22 @@ namespace BugTrackingSystem.com.bugtracking.model
             this.reportedBy = reportedBy;
         }
 
+        public Bug(int bugID, string bugTitle, string project, string line, string method, string bugClass, string notes, string code, Image file, string priority, string date, string reportedBy)
+        {
+            this.bugID = bugID;
+            this.bugTitle = bugTitle;
+            this.project = project;
+            this.line = line;
+            this.method = method;
+            this.bugClass = bugClass;
+            this.notes = notes;
+            this.code = code;
+            this.file = file;
+            this.priority = priority;
+            this.date = date;
+            this.reportedBy = reportedBy;
+        }
+
         public Bug(string bugTitle, string project, string line, string method, string bugClass, string notes, string code, Image file, string priority, object resolved, object comments, string date, object reportedBy, object resolvedBy)
         {
             this.BugTitle = bugTitle;

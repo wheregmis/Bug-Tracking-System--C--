@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\LibGit2Sharp.0.21.0.176\build\net40\LibGit2Sharp.props" Condition="Exists('..\packages\LibGit2Sharp.0.21.0.176\build\net40\LibGit2Sharp.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LibGit2Sharp, Version=0.21.0.176, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LibGit2Sharp.0.21.0.176\lib\net40\LibGit2Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
     </Reference>
@@ -54,10 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="com.bugtracking.controller\BugController.cs" />
+    <Compile Include="com.bugtracking.controller\BugFixesController.cs" />
+    <Compile Include="com.bugtracking.controller\GitController.cs" />
     <Compile Include="com.bugtracking.controller\ProjectController.cs" />
     <Compile Include="com.bugtracking.controller\UserController.cs" />
     <Compile Include="com.bugtracking.dbconnection\config.xml.cs" />
     <Compile Include="com.bugtracking.model\Bug.cs" />
+    <Compile Include="com.bugtracking.model\Fixes.cs" />
     <Compile Include="com.bugtracking.model\Project.cs" />
     <Compile Include="com.bugtracking.model\User.cs" />
     <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\AdminPage.cs">
@@ -65,6 +74,12 @@
     </Compile>
     <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\AdminPage.Designer.cs">
       <DependentUpon>AdminPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\GitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\GitForm.Designer.cs">
+      <DependentUpon>GitForm.cs</DependentUpon>
     </Compile>
     <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageBugs.cs">
       <SubType>Form</SubType>
@@ -84,11 +99,35 @@
     <Compile Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageUsers.Designer.cs">
       <DependentUpon>ManageUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\AllBugs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\AllBugs.Designer.cs">
+      <DependentUpon>AllBugs.cs</DependentUpon>
+    </Compile>
     <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\BugDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\BugDetail.Designer.cs">
       <DependentUpon>BugDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\BugList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\BugList.Designer.cs">
+      <DependentUpon>BugList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\CodeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\CodeView.Designer.cs">
+      <DependentUpon>CodeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\ImageView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\ImageView.Designer.cs">
+      <DependentUpon>ImageView.cs</DependentUpon>
     </Compile>
     <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\Login.cs">
       <SubType>Form</SubType>
@@ -102,10 +141,25 @@
     <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\ReportBugs.Designer.cs">
       <DependentUpon>ReportBugs.cs</DependentUpon>
     </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\UserDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\UserDashboard.Designer.cs">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\UserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com.bugtracking.views\com.bugtracking.views.userpanel\UserProfile.Designer.cs">
+      <DependentUpon>UserProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.adminpanel\AdminPage.resx">
       <DependentUpon>AdminPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.adminpanel\GitForm.resx">
+      <DependentUpon>GitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageBugs.resx">
       <DependentUpon>ManageBugs.cs</DependentUpon>
@@ -116,14 +170,32 @@
     <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.adminpanel\ManageUsers.resx">
       <DependentUpon>ManageUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.userpanel\AllBugs.resx">
+      <DependentUpon>AllBugs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.userpanel\BugDetail.resx">
       <DependentUpon>BugDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.userpanel\BugList.resx">
+      <DependentUpon>BugList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.userpanel\CodeView.resx">
+      <DependentUpon>CodeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.userpanel\ImageView.resx">
+      <DependentUpon>ImageView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.userpanel\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.userpanel\ReportBugs.resx">
       <DependentUpon>ReportBugs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.userpanel\UserDashboard.resx">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="com.bugtracking.views\com.bugtracking.views.userpanel\UserProfile.resx">
+      <DependentUpon>UserProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -152,4 +224,10 @@
     <Folder Include="images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\LibGit2Sharp.0.21.0.176\build\net40\LibGit2Sharp.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LibGit2Sharp.0.21.0.176\build\net40\LibGit2Sharp.props'))" />
+  </Target>
 </Project>

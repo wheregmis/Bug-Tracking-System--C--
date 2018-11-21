@@ -82,7 +82,7 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
                 {
                     while (reader.Read())
                     {
-                        this.usertype = reader["userType"].ToString();        // 1st column text
+                        this.usertype = reader["userRole"].ToString();        // 1st column text
                         Console.WriteLine(this.usertype);
                     }
                     databaseConnection.Close();
@@ -123,9 +123,11 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
             }
         }
 
-        public void insertData(String query) {
+        public void insertBug(String query, byte[] img) {
             
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.Parameters.Add("@img", MySqlDbType.LongBlob);
+            commandDatabase.Parameters["@img"].Value = img;
             commandDatabase.CommandTimeout = 60;
 
             try
@@ -197,10 +199,27 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
                 System.Environment.Exit(1);
             }
         }
+    
+        public void insertData(String query)
+        {
 
-        public void fillComb() {
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
 
-            
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+
+                MessageBox.Show("User succesfully registered");
+
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

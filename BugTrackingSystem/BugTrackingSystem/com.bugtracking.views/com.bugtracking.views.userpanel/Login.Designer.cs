@@ -41,11 +41,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.showPassword = new MaterialSkin.Controls.MaterialCheckBox();
+            this.btnForgetPassword = new MaterialSkin.Controls.MaterialFlatButton();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -54,7 +58,7 @@
             this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnLogin.Depth = 0;
             this.btnLogin.Icon = null;
-            this.btnLogin.Location = new System.Drawing.Point(1014, 497);
+            this.btnLogin.Location = new System.Drawing.Point(984, 596);
             this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Primary = true;
@@ -200,12 +204,63 @@
             this.pictureBox5.TabIndex = 12;
             this.pictureBox5.TabStop = false;
             // 
+            // showPassword
+            // 
+            this.showPassword.AutoSize = true;
+            this.showPassword.Depth = 0;
+            this.showPassword.Font = new System.Drawing.Font("Roboto", 10F);
+            this.showPassword.Location = new System.Drawing.Point(952, 477);
+            this.showPassword.Margin = new System.Windows.Forms.Padding(0);
+            this.showPassword.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.showPassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.showPassword.Name = "showPassword";
+            this.showPassword.Ripple = true;
+            this.showPassword.Size = new System.Drawing.Size(154, 30);
+            this.showPassword.TabIndex = 13;
+            this.showPassword.Text = "Show Password";
+            this.showPassword.UseVisualStyleBackColor = true;
+            this.showPassword.CheckedChanged += new System.EventHandler(this.showPassword_CheckedChanged);
+            // 
+            // btnForgetPassword
+            // 
+            this.btnForgetPassword.AutoSize = true;
+            this.btnForgetPassword.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnForgetPassword.Depth = 0;
+            this.btnForgetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgetPassword.Icon = null;
+            this.btnForgetPassword.Location = new System.Drawing.Point(932, 530);
+            this.btnForgetPassword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnForgetPassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnForgetPassword.Name = "btnForgetPassword";
+            this.btnForgetPassword.Primary = false;
+            this.btnForgetPassword.Size = new System.Drawing.Size(199, 36);
+            this.btnForgetPassword.TabIndex = 14;
+            this.btnForgetPassword.Text = "Forget Password??";
+            this.btnForgetPassword.UseVisualStyleBackColor = true;
+            this.btnForgetPassword.Click += new System.EventHandler(this.btnForgetPassword_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(1248, 1);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(30, 22);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 15;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ControlBox = false;
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.btnForgetPassword);
+            this.Controls.Add(this.showPassword);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox1);
@@ -227,6 +282,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,6 +302,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private MaterialSkin.Controls.MaterialCheckBox showPassword;
+        private MaterialSkin.Controls.MaterialFlatButton btnForgetPassword;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }
 

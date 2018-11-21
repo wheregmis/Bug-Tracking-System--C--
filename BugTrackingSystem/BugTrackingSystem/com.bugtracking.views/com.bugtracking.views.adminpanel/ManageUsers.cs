@@ -1,6 +1,7 @@
 ﻿using BugTrackingSystem.com.bugtracking.controller;
 using BugTrackingSystem.com.bugtracking.dbconnection;
 using BugTrackingSystem.com.bugtracking.model;
+using BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -17,6 +18,7 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
 {
     public partial class ManageUsers : MaterialForm
     {
+        String email;
         public int id;
         public ManageUsers(String email)
         {
@@ -28,10 +30,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
 
             // Configure color schema
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Grey800, Primary.Grey700,
-                Primary.Grey800, Accent.LightBlue100,
+                Primary.BlueGrey800, Primary.BlueGrey500,
+                Primary.BlueGrey800, Accent.LightBlue100,
                 TextShade.WHITE
               );
+            this.email = email;
         }
 
         private void ManageUsers_Load(object sender, EventArgs e)
@@ -46,7 +49,7 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
         {
 
             listUser.Clear();
-            String query = "select firstName AS 'First Name', lastName AS 'Last Name', userEmail as Email, userRole as 'User Role', gender as Gender, birthDate as 'Date of Birth' from tbl_users where userType = 2";
+            String query = "select firstName AS 'First Name', lastName AS 'Last Name', userEmail as Email, userRole as 'User Role', gender as Gender, birthDate as 'Date of Birth' from tbl_users";
             DataTable dt = new Database().getData(query);
 
             foreach (DataColumn column in dt.Columns)
@@ -145,6 +148,49 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
             dateOfBirth.Value = DateTime.UtcNow.Date;
         }
 
-        
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AdminPage(this.email, "Admin").Show();
+            this.Hide();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UserProfile(this.email).Show();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ManageUsers(this.email).Show();
+            this.Hide();
+        }
+
+        private void projectsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ManageProjects(this.email).Show();
+            this.Hide();
+        }
+
+        private void bugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ManageBugs(this.email, "admin").Show();
+            this.Hide();
+        }
     }
 }

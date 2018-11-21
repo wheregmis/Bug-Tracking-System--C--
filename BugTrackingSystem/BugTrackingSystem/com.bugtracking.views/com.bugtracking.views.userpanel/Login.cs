@@ -37,10 +37,10 @@ namespace BugTrackingSystem
 
             // Configure color schema
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Grey800, Primary.Grey700,
-                Primary.Grey800, Accent.LightBlue100,
+                Primary.BlueGrey800, Primary.BlueGrey500,
+                Primary.BlueGrey800, Accent.LightBlue100,
                 TextShade.WHITE
-            );
+              );
         }
 
         
@@ -54,36 +54,44 @@ namespace BugTrackingSystem
             }
             else
             {
-                if (validate == "1")
+                if (validate == "Admin")
                 {
-                    DataTable dt = new UserController().GetUserDetails(txtEmail.Text);
-
-                    int id = dt.Rows[0].Field<int>("userID");
-                    
-                    String email = dt.Rows[0].Field<String>("userEmail");
-                     
-
-                    new AdminPage(email).Show();
+                    new AdminPage(txtEmail.Text, "Admin").Show();
                     this.Hide();
                 }
-                if (validate == "2")
-                {
+                else {
+
                     DataTable dt = new UserController().GetUserDetails(txtEmail.Text);
 
                     int id = dt.Rows[0].Field<int>("userID");
 
                     String email = dt.Rows[0].Field<String>("userEmail");
-                    
-
-                    new ReportBugs(email).Show();
+                    String userRole = dt.Rows[0].Field<String>("userRole");
+                    new UserDashboard(email, userRole).Show();
                     this.Hide();
                 }
+            
             }
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void showPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = showPassword.Checked ? '\0' : '*';
+        }
+
+        private void btnForgetPassword_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Please contact Admin to reset your password");
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

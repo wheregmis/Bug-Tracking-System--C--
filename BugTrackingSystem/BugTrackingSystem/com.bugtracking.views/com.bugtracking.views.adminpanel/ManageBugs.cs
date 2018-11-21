@@ -1,4 +1,5 @@
 ﻿using BugTrackingSystem.com.bugtracking.controller;
+using BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpanel;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -15,7 +16,8 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
 {
     public partial class ManageBugs : MaterialForm
     {
-        public ManageBugs()
+        String email;
+        public ManageBugs(String email)
         {
             InitializeComponent();
             // Create a material theme manager and add the form to manage (this)
@@ -25,11 +27,32 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
 
             // Configure color schema
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Grey800, Primary.Grey700,
-                Primary.Grey800, Accent.LightBlue100,
+                Primary.BlueGrey800, Primary.BlueGrey500,
+                Primary.BlueGrey800, Accent.LightBlue100,
                 TextShade.WHITE
               );
+            this.email = email;
             loadData();
+            btnDelete.Visible = false;
+        }
+
+        public ManageBugs(String email, String admin)
+        {
+            InitializeComponent();
+            // Create a material theme manager and add the form to manage (this)
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.BlueGrey800, Primary.BlueGrey500,
+                Primary.BlueGrey800, Accent.LightBlue100,
+                TextShade.WHITE
+              );
+            this.email = email;
+            loadData();
+            btnDelete.Visible = true;
         }
 
         public void loadData()
@@ -53,6 +76,68 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
             }
         }
 
+        private void listBugs_DoubleClick(object sender, EventArgs e)
+        {
+            int bugID = Convert.ToInt32(listBugs.FocusedItem.SubItems[0].Text);
+            Console.WriteLine(bugID);
 
+            this.Hide();
+             new BugDetail(bugID, this.email).Show();
+
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int bugID = Convert.ToInt32(listBugs.FocusedItem.SubItems[0].Text);
+            Console.WriteLine(bugID);
+            new BugController().DeleteBugs(bugID);
+        }
+
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AdminPage(this.email, "Admin").Show();
+            this.Hide();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UserProfile(this.email).Show();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ManageUsers(this.email).Show();
+            this.Hide();
+        }
+
+        private void projectsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ManageProjects(this.email).Show();
+            this.Hide();
+        }
+
+        private void bugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ManageBugs(this.email, "admin").Show();
+            this.Hide();
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace BugTrackingSystem.com.bugtracking.controller
 
         public void InsertUser(User u)
         {
-            string query = "INSERT INTO tbl_users(`firstName`, `lastName`, `userEmail`, `userPassword`, `userAddress`, `birthDate`, `gender`, `userRole`, `userType`) VALUES ('" + u.Firstname + "', '" + u.Lastname + "', '" + u.Email + "', '" + u.Password + "', '" + u.Address + "', '" + u.Dob + "', '" + u.Gender + "', '" + u.Userrole + "', 2)";
+            string query = "INSERT INTO tbl_users(`firstName`, `lastName`, `userEmail`, `userPassword`, `userAddress`, `birthDate`, `gender`, `userRole`) VALUES ('" + u.Firstname + "', '" + u.Lastname + "', '" + u.Email + "', '" + u.Password + "', '" + u.Address + "', '" + u.Dob + "', '" + u.Gender + "', '" + u.Userrole + "')";
             Console.WriteLine(query);
             new Database().insertData(query);
 

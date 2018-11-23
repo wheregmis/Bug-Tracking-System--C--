@@ -58,6 +58,9 @@
             this.picScreenshot = new System.Windows.Forms.PictureBox();
             this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.radioWorked = new MaterialSkin.Controls.MaterialRadioButton();
+            this.radioNotWork = new MaterialSkin.Controls.MaterialRadioButton();
+            this.btnStatus = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.picScreenshot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -321,7 +324,7 @@
             this.btnResolve.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnResolve.Depth = 0;
             this.btnResolve.Icon = null;
-            this.btnResolve.Location = new System.Drawing.Point(1108, 646);
+            this.btnResolve.Location = new System.Drawing.Point(1108, 662);
             this.btnResolve.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnResolve.Name = "btnResolve";
             this.btnResolve.Primary = true;
@@ -443,12 +446,65 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // radioWorked
+            // 
+            this.radioWorked.AutoSize = true;
+            this.radioWorked.Depth = 0;
+            this.radioWorked.Font = new System.Drawing.Font("Roboto", 10F);
+            this.radioWorked.Location = new System.Drawing.Point(803, 619);
+            this.radioWorked.Margin = new System.Windows.Forms.Padding(0);
+            this.radioWorked.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.radioWorked.MouseState = MaterialSkin.MouseState.HOVER;
+            this.radioWorked.Name = "radioWorked";
+            this.radioWorked.Ripple = true;
+            this.radioWorked.Size = new System.Drawing.Size(104, 30);
+            this.radioWorked.TabIndex = 95;
+            this.radioWorked.TabStop = true;
+            this.radioWorked.Text = "It Worked";
+            this.radioWorked.UseVisualStyleBackColor = true;
+            // 
+            // radioNotWork
+            // 
+            this.radioNotWork.AutoSize = true;
+            this.radioNotWork.Depth = 0;
+            this.radioNotWork.Font = new System.Drawing.Font("Roboto", 10F);
+            this.radioNotWork.Location = new System.Drawing.Point(1108, 616);
+            this.radioNotWork.Margin = new System.Windows.Forms.Padding(0);
+            this.radioNotWork.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.radioNotWork.MouseState = MaterialSkin.MouseState.HOVER;
+            this.radioNotWork.Name = "radioNotWork";
+            this.radioNotWork.Ripple = true;
+            this.radioNotWork.Size = new System.Drawing.Size(143, 30);
+            this.radioNotWork.TabIndex = 96;
+            this.radioNotWork.TabStop = true;
+            this.radioNotWork.Text = "It Doesnt Work";
+            this.radioNotWork.UseVisualStyleBackColor = true;
+            // 
+            // btnStatus
+            // 
+            this.btnStatus.AutoSize = true;
+            this.btnStatus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnStatus.Depth = 0;
+            this.btnStatus.Icon = null;
+            this.btnStatus.Location = new System.Drawing.Point(803, 662);
+            this.btnStatus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnStatus.Name = "btnStatus";
+            this.btnStatus.Primary = true;
+            this.btnStatus.Size = new System.Drawing.Size(153, 36);
+            this.btnStatus.TabIndex = 97;
+            this.btnStatus.Text = "Submit Status";
+            this.btnStatus.UseVisualStyleBackColor = true;
+            this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
+            // 
             // BugDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.btnStatus);
+            this.Controls.Add(this.radioNotWork);
+            this.Controls.Add(this.radioWorked);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.materialFlatButton3);
             this.Controls.Add(this.picScreenshot);
@@ -481,7 +537,7 @@
             this.MaximizeBox = false;
             this.Name = "BugDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BugDetail";
+            this.Text = "Bug Details";
             this.Load += new System.EventHandler(this.BugDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picScreenshot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -520,5 +576,8 @@
         private System.Windows.Forms.PictureBox picScreenshot;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private MaterialSkin.Controls.MaterialRadioButton radioWorked;
+        private MaterialSkin.Controls.MaterialRadioButton radioNotWork;
+        private MaterialSkin.Controls.MaterialRaisedButton btnStatus;
     }
 }

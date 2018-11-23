@@ -20,7 +20,7 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
         public AllBugs(String email)
         {
             InitializeComponent();
-            InitializeComponent();
+           
             // Create a material theme manager and add the form to manage (this)
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -36,24 +36,95 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             loadData();
         }
 
+        //method to load all the bugs in the listview
         public void loadData()
         {
-            bugList.Clear();
-            DataTable dt = new BugController().GetAllBugs();
+                listBugs.Clear();
+                DataTable dt = new BugController().GetAllBugs();
 
-            foreach (DataColumn column in dt.Columns)
-            {
-                this.bugList.Columns.Add(column.ColumnName, -2, HorizontalAlignment.Left);
-            }
-            foreach (DataRow row in dt.Rows)
-            {
-                ListViewItem item = new ListViewItem(row[0].ToString());
-                for (int i = 1; i < dt.Columns.Count; i++)
+                foreach (DataColumn column in dt.Columns)
                 {
-                    item.SubItems.Add(row[i].ToString());
+                    this.listBugs.Columns.Add(column.ColumnName, -2, HorizontalAlignment.Left);
                 }
-                bugList.Items.Add(item);
-                bugList.View = View.Details;
+                foreach (DataRow row in dt.Rows)
+                {
+                    ListViewItem item = new ListViewItem(row[0].ToString());
+                    for (int i = 1; i < dt.Columns.Count; i++)
+                    {
+                        item.SubItems.Add(row[i].ToString());
+                    }
+                    listBugs.Items.Add(item);
+                    listBugs.View = View.Details;
+                }
+            
+        }
+
+        //method to open bugdetail when double clicked on the listview
+        private void listBugs_DoubleClick(object sender, EventArgs e)
+        {
+            int bugID = Convert.ToInt32(listBugs.FocusedItem.SubItems[0].Text);
+            Console.WriteLine(bugID);
+
+            //this.Hide();
+            new BugDetail(bugID, this.email).Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
             }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UserProfile(this.email).Show();
+        }
+
+        private void bugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ReportBugs(this.email).Show();
+            this.Hide();
+        }
+
+        private void yourBugListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new BugList(this.email).Show();
+            this.Hide();
+        }
+
+        private void othersBugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AllBugs(this.email).Show();
+            this.Hide();
+        }
+
+        private void reportBugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ReportBugs(this.email).Show();
+            this.Hide();
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UserDashboard(this.email).Show();
+            this.Hide();
         }
     } }

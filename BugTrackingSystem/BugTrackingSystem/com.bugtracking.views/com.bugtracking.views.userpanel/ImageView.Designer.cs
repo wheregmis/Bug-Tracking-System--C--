@@ -65,6 +65,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.picView);
             this.Name = "ImageView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ImageView";
             ((System.ComponentModel.ISupportInitialize)(this.picView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

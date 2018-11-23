@@ -76,6 +76,7 @@
             // 
             this.cmbUserRole.FormattingEnabled = true;
             this.cmbUserRole.Items.AddRange(new object[] {
+            "Admin",
             "Developer",
             "Tester",
             "Programmer"});
@@ -544,7 +545,7 @@
             this.Controls.Add(this.materialLabel1);
             this.Name = "ManageUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManageUsers";
+            this.Text = "Manage Users";
             this.Load += new System.EventHandler(this.ManageUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -34,9 +34,13 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             loadData();
         }
 
+        /// <summary>
+        /// loading bugs into the listview
+        /// </summary>
         public void loadData()
         {
             listBugs.Clear();
+            
             DataTable dt = new BugController().GetYourBugs(this.email);
 
             foreach (DataColumn column in dt.Columns)
@@ -55,18 +59,79 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             }
         }
 
+        /// <summary>
+        /// making it open the bug detail form when listview is double clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listBugs_DoubleClick(object sender, EventArgs e)
         {
             int bugID = Convert.ToInt32(listBugs.FocusedItem.SubItems[1].Text);
             Console.WriteLine(bugID);
 
-            this.Hide();
+           // this.Hide();
             new BugDetail(bugID, this.email).Show();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UserProfile(this.email).Show();
+        }
+
+        private void bugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ReportBugs(this.email).Show();
+            this.Hide();
+        }
+
+        private void yourBugListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new BugList(this.email).Show();
+            this.Hide();
+        }
+
+        private void othersBugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AllBugs(this.email).Show();
+            this.Hide();
+        }
+
+        private void reportBugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ReportBugs(this.email).Show();
+            this.Hide();
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UserDashboard(this.email).Show();
+            this.Hide();
+        }
+
+       
     }
 }

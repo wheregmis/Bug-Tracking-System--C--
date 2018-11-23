@@ -7,7 +7,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +18,7 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
 {
     public partial class GitForm : MaterialForm
     {
-        String email;
+        String email, localFolder;
         public GitForm(String email)
         {
             InitializeComponent();
@@ -33,37 +35,33 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
                 TextShade.WHITE
               );
             this.email = email;
-            // webBrowser.Navigate("https://github.com/xawbeenregmi/Bug-Tracking-System--C--/commits/master");
+
+           
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/xawbeenregmi/Bug-Tracking-System--C--/commits/master");
+            System.Diagnostics.Process.Start("https://github.com/xawbeenregmi/Bug-Tracking-System--C--");
         }
 
         private void btnCommit_Click(object sender, EventArgs e)
         {
+            //Commiting the message to local repo
             String username = "xawbeenregmi";
             String password = "n0b0dycanhackme";
-            String repo = "https://github.com/xawbeenregmi/testingLibgit";
-            String localfile = "C:/Users/xawbe/Documents/GitHub/Bug-Tracking-System--C--";
+            String repo = "https://github.com/xawbeenregmi/Bug-Tracking-System--C--/commits/master";
+            String localfile = this.localFolder;
             GitController gc = new GitController(username, password, repo, localfile);
             gc.Commit(txtMessage.Text);
         }
 
-        private void btnPush_Click(object sender, EventArgs e)
-        {
-            String username = "xawbeenregmi";
-            String password = "n0b0dycanhackme";
-            String repo = "https://github.com/xawbeenregmi/testingLibgit";
-            String localfile = "C:/Users/xawbe/Documents/GitHub/Bug-Tracking-System--C--";
-            GitController gc = new GitController(username, password, repo, localfile);
-            gc.PushCommits();
-        }
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,7 +78,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,6 +106,94 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
         {
             new ManageBugs(this.email, "admin").Show();
             this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            //pushing the commits to github repo 
+            String username = "xawbeenregmi";
+            String password = "n0b0dycanhackme";
+            String repo = "https://github.com/xawbeenregmi/Bug-Tracking-System--C--";
+            String localfile = this.localFolder;
+            GitController gc = new GitController(username, password, repo, localfile);
+            gc.PushCommits();
+        }
+
+        private void RefreshCommitHistory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GitForm_Load(object sender, EventArgs e)
+        {
+           
+        }
+        
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            //getting the commit history into the textarea
+            textHistory.SelectAll();
+            textHistory.Clear();
+            Console.SetOut(new ControlWriter(textHistory));
+            String username = "xawbeenregmi";
+            String password = "n0b0dycanhackme";
+            String repo = "https://github.com/xawbeenregmi/Bug-Tracking-System--C--";
+            String localfile = this.localFolder;
+            new GitController(username, password, repo, localfile).getCommitHistory();
+            textHistory.ReadOnly = true;
+        }
+
+        private void RefreshHistory_Click(object sender, EventArgs e)
+        {
+            //getting the commit history into the textarea
+            textHistory.SelectAll();
+            textHistory.Clear();
+            Console.SetOut(new ControlWriter(textHistory));
+            String username = "xawbeenregmi";
+            String password = "n0b0dycanhackme";
+            String repo = "https://github.com/xawbeenregmi/Bug-Tracking-System--C--";
+            String localfile = this.localFolder;
+            new GitController(username, password, repo, localfile).getCommitHistory();
+            textHistory.ReadOnly = true;
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    lblLocalFolder.Text = fbd.SelectedPath;
+                    this.localFolder = fbd.SelectedPath;
+                }
+            }
+        }
+    }
+
+    public class ControlWriter : TextWriter
+    {
+        private Control textbox;
+        public ControlWriter(Control textbox)
+        {
+            this.textbox = textbox;
+        }
+
+        public override void Write(char value)
+        {
+            textbox.Text += value;
+        }
+
+        public override void Write(string value)
+        {
+            textbox.Text += value;
+        }
+
+        public override Encoding Encoding
+        {
+            get { return Encoding.ASCII; }
         }
     }
 }

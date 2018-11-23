@@ -41,6 +41,9 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             
         }
 
+        /// <summary>
+        /// loading the bugs in the listview
+        /// </summary>
         public void loadData()
         {
             listBugs.Clear();
@@ -62,6 +65,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             }
         }
 
+        /// <summary>
+        /// adding the bugs in the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReport_Click(object sender, EventArgs e)
         {
             String bugTitle = txtBugTitle.Text;
@@ -194,6 +202,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             new ImageView(this.File).Show();
         }
 
+        /// <summary>
+        /// auto fill the forn when double clicked on the listview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listBugs_DoubleClick(object sender, EventArgs e)
         {
             int bugID = Convert.ToInt32(listBugs.FocusedItem.SubItems[1].Text);
@@ -217,6 +230,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             
         }
 
+        /// <summary>
+        /// method to convert byte[] into image
+        /// </summary>
+        /// <param name="byteArrayIn"></param>
+        /// <returns>img</returns>
         public Image byteArrayToImage(byte[] byteArrayIn)
         {
 
@@ -226,6 +244,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             return img;
         }
 
+        /// <summary>
+        /// method to update the bugs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int bugID = Convert.ToInt32(listBugs.FocusedItem.SubItems[1].Text);
@@ -248,7 +271,61 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UserProfile(this.email).Show();
+        }
+
+        private void bugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ReportBugs(this.email).Show();
+            this.Hide();
+        }
+
+        private void yourBugListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new BugList(this.email).Show();
+            this.Hide();
+        }
+
+        private void othersBugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AllBugs(this.email).Show();
+            this.Hide();
+        }
+
+        private void reportBugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ReportBugs(this.email).Show();
+            this.Hide();
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UserDashboard(this.email).Show();
+            this.Hide();
         }
     }
 }

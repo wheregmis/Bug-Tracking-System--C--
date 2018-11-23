@@ -1,0 +1,8 @@
+Before running my program
+--Open mysql
+--create a database name 'bugtrackingsystem'
+--import the sql file available in the database folder
+
+
+Run the System
+--Enjoy

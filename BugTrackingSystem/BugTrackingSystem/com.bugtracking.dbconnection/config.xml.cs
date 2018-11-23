@@ -15,14 +15,13 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
 
     class Database
     {
+         String usertype;
         // Prepare the connection
-
-        String usertype;
-
         MySqlConnection databaseConnection = new MySqlConnection("datasource=localhost;username=root;password=;database=bugtrackingsystem;");
 
 
-        public void listUsers()
+        //listing user
+        public void ListUsers()
         {
 
             // Select all
@@ -64,7 +63,7 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
             }
         }
 
-
+        //validating login and userrole
         public String LoginValidate(String email, String password) {
 
              String query = "SELECT * FROM tbl_users WHERE userEmail='"+email+"' and userPassword='"+password+"'";
@@ -102,7 +101,8 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
             }
         }
 
-        public DataTable getData(String query)
+        //getting data from database and loading it into datatable and returning it
+        public DataTable GetData(String query)
         {
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -123,7 +123,10 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
             }
         }
 
-        public void insertBug(String query, byte[] img) {
+        //inserting bug into database 
+        //While inserting it in normal way image wasnt loading so i need to add parameter in the query
+        //thats why i need to create a seperate method to insert bugs
+        public void InsertBug(String query, byte[] img) {
             
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.Parameters.Add("@img", MySqlDbType.LongBlob);
@@ -146,7 +149,8 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
             }
         }
 
-        public void updateData(String query) {
+        //Updating data into database
+        public void UpdateData(String query) {
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
 
@@ -166,6 +170,7 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
             }
         }
 
+        //Deleting data in database
         public void DeleteData(String query) {
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -186,21 +191,8 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
             }
         }
 
-        public void SystemClose()
-        {
-            if (System.Windows.Forms.Application.MessageLoop)
-            {
-                // WinForms app
-                System.Windows.Forms.Application.Exit();
-            }
-            else
-            {
-                // Console app
-                System.Environment.Exit(1);
-            }
-        }
-    
-        public void insertData(String query)
+       //method to insert Data in the database
+        public void InsertData(String query)
         {
 
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);

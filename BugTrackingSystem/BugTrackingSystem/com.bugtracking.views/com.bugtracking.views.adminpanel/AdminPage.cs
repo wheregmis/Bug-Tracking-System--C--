@@ -32,16 +32,7 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
                 Primary.BlueGrey800, Accent.LightBlue100,
                 TextShade.WHITE
               );
-        }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            
-                base.OnFormClosing(e);
-                if (e.CloseReason == CloseReason.WindowsShutDown
-                    || e.CloseReason == CloseReason.ApplicationExitCall)
-                    return;
-
+            lblProfile.Text = email;
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
@@ -94,7 +85,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -105,7 +100,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,7 +121,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)

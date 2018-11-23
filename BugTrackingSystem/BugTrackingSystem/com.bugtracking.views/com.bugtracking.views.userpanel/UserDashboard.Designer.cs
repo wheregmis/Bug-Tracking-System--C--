@@ -37,22 +37,36 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.lblResolve = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblProfile = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.lblEmail = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.menuBar = new System.Windows.Forms.MenuStrip();
+            this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yourBugListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.othersBugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportBugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResolve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBugList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.menuBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 80);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 142);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -63,7 +77,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1198, 80);
+            this.pictureBox2.Location = new System.Drawing.Point(1198, 142);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(70, 59);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -136,25 +150,25 @@
             this.lblResolve.Depth = 0;
             this.lblResolve.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblResolve.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblResolve.Location = new System.Drawing.Point(562, 595);
+            this.lblResolve.Location = new System.Drawing.Point(606, 595);
             this.lblResolve.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblResolve.Name = "lblResolve";
-            this.lblResolve.Size = new System.Drawing.Size(185, 24);
+            this.lblResolve.Size = new System.Drawing.Size(106, 24);
             this.lblResolve.TabIndex = 7;
-            this.lblResolve.Text = "Resolve Others Bugs";
+            this.lblResolve.Text = "All Bug List";
             // 
-            // materialLabel4
+            // lblProfile
             // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(26, 153);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(66, 24);
-            this.materialLabel4.TabIndex = 8;
-            this.materialLabel4.Text = "Profile";
+            this.lblProfile.AutoSize = true;
+            this.lblProfile.Depth = 0;
+            this.lblProfile.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblProfile.Location = new System.Drawing.Point(26, 215);
+            this.lblProfile.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblProfile.Name = "lblProfile";
+            this.lblProfile.Size = new System.Drawing.Size(66, 24);
+            this.lblProfile.TabIndex = 8;
+            this.lblProfile.Text = "Profile";
             // 
             // materialLabel5
             // 
@@ -162,7 +176,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(1199, 142);
+            this.materialLabel5.Location = new System.Drawing.Point(1199, 204);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(69, 24);
@@ -175,7 +189,7 @@
             this.lblEmail.Depth = 0;
             this.lblEmail.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEmail.Location = new System.Drawing.Point(119, 107);
+            this.lblEmail.Location = new System.Drawing.Point(119, 169);
             this.lblEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(0, 24);
@@ -193,16 +207,129 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
+            // menuBar
+            // 
+            this.menuBar.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuBar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.systemToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.viewToolStripMenuItem});
+            this.menuBar.Location = new System.Drawing.Point(566, 83);
+            this.menuBar.Name = "menuBar";
+            this.menuBar.Size = new System.Drawing.Size(176, 28);
+            this.menuBar.TabIndex = 13;
+            this.menuBar.Text = "menuBar";
+            // 
+            // systemToolStripMenuItem
+            // 
+            this.systemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashboardToolStripMenuItem,
+            this.logoutToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
+            this.systemToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.systemToolStripMenuItem.Text = "System";
+            // 
+            // dashboardToolStripMenuItem
+            // 
+            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.profileToolStripMenuItem,
+            this.bugsToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // profileToolStripMenuItem
+            // 
+            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
+            this.profileToolStripMenuItem.Text = "Profile";
+            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
+            // 
+            // bugsToolStripMenuItem
+            // 
+            this.bugsToolStripMenuItem.Name = "bugsToolStripMenuItem";
+            this.bugsToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
+            this.bugsToolStripMenuItem.Text = "Bugs";
+            this.bugsToolStripMenuItem.Click += new System.EventHandler(this.bugsToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yourBugListToolStripMenuItem,
+            this.othersBugsToolStripMenuItem,
+            this.reportBugsToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // yourBugListToolStripMenuItem
+            // 
+            this.yourBugListToolStripMenuItem.Name = "yourBugListToolStripMenuItem";
+            this.yourBugListToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.yourBugListToolStripMenuItem.Text = "Your Bug List";
+            this.yourBugListToolStripMenuItem.Click += new System.EventHandler(this.yourBugListToolStripMenuItem_Click);
+            // 
+            // othersBugsToolStripMenuItem
+            // 
+            this.othersBugsToolStripMenuItem.Name = "othersBugsToolStripMenuItem";
+            this.othersBugsToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.othersBugsToolStripMenuItem.Text = "Others Bugs";
+            this.othersBugsToolStripMenuItem.Click += new System.EventHandler(this.othersBugsToolStripMenuItem_Click);
+            // 
+            // reportBugsToolStripMenuItem
+            // 
+            this.reportBugsToolStripMenuItem.Name = "reportBugsToolStripMenuItem";
+            this.reportBugsToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.reportBugsToolStripMenuItem.Text = "Report Bugs";
+            this.reportBugsToolStripMenuItem.Click += new System.EventHandler(this.reportBugsToolStripMenuItem_Click);
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(522, 188);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(296, 24);
+            this.materialLabel3.TabIndex = 14;
+            this.materialLabel3.Text = "Welcome to Bug Tracking System";
+            // 
             // UserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.materialLabel5);
-            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.lblProfile);
             this.Controls.Add(this.lblResolve);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
@@ -211,14 +338,19 @@
             this.Controls.Add(this.picReport);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.menuBar);
+            this.MainMenuStrip = this.menuBar;
             this.Name = "UserDashboard";
-            this.Text = "UserDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "User Dashboard";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResolve)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBugList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.menuBar.ResumeLayout(false);
+            this.menuBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,9 +366,22 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel lblResolve;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel lblProfile;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel lblEmail;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.MenuStrip menuBar;
+        private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bugsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yourBugListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem othersBugsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportBugsToolStripMenuItem;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
     }
 }

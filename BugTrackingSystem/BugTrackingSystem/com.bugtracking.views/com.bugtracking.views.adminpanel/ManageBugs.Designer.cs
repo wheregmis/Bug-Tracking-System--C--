@@ -214,7 +214,7 @@
             this.Controls.Add(this.listBugs);
             this.Name = "ManageBugs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManageBugs";
+            this.Text = "Manage Bugs";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.menubar.ResumeLayout(false);
             this.menubar.PerformLayout();

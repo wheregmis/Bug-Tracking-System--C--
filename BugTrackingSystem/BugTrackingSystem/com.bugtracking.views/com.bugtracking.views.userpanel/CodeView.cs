@@ -102,7 +102,7 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
         }
     }
 }

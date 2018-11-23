@@ -1,4 +1,5 @@
-﻿using BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpanel;
+﻿using BugTrackingSystem.com.bugtracking.controller;
+using BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpanel;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -16,7 +17,7 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
     public partial class UserDashboard : MaterialForm
     {
         String email;
-        public UserDashboard(String email, String userRole)
+        public UserDashboard(String email)
         {
             InitializeComponent();
             // Create a material theme manager and add the form to manage (this)
@@ -30,13 +31,9 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
                 Primary.BlueGrey800, Accent.LightBlue100,
                 TextShade.WHITE
               );
-            lblEmail.Text = email;
+            lblProfile.Text = email;
             this.email = email;
-
-            if (userRole == "Tester") {
-                lblResolve.Visible = false;
-                picResolve.Visible = false;
-            }
+  
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -70,7 +67,61 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UserProfile(this.email).Show();
+        }
+
+        private void bugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ReportBugs(this.email).Show();
+            this.Hide();
+        }
+
+        private void yourBugListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new BugList(this.email).Show();
+            this.Hide();
+        }
+
+        private void othersBugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AllBugs(this.email).Show();
+            this.Hide();
+        }
+
+        private void reportBugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ReportBugs(this.email).Show();
+            this.Hide();
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UserDashboard(this.email).Show();
+            this.Hide();
         }
     }
 }

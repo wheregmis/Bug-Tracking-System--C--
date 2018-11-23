@@ -62,6 +62,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.TextArea);
             this.Name = "CodeView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CodeView";
             this.Load += new System.EventHandler(this.CodeView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

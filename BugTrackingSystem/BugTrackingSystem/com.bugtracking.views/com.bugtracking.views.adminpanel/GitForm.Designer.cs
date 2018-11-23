@@ -35,7 +35,6 @@
             this.btnCommit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnPush = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -50,10 +49,16 @@
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHistory = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.textHistory = new ScintillaNET.Scintilla();
+            this.RefreshHistory = new System.Windows.Forms.PictureBox();
+            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.lblLocalFolder = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.menubar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RefreshHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCommitHistory
@@ -62,13 +67,13 @@
             this.btnCommitHistory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCommitHistory.Depth = 0;
             this.btnCommitHistory.Icon = null;
-            this.btnCommitHistory.Location = new System.Drawing.Point(521, 642);
+            this.btnCommitHistory.Location = new System.Drawing.Point(505, 663);
             this.btnCommitHistory.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCommitHistory.Name = "btnCommitHistory";
             this.btnCommitHistory.Primary = true;
-            this.btnCommitHistory.Size = new System.Drawing.Size(293, 36);
+            this.btnCommitHistory.Size = new System.Drawing.Size(303, 36);
             this.btnCommitHistory.TabIndex = 0;
-            this.btnCommitHistory.Text = "Click to Open Commit History";
+            this.btnCommitHistory.Text = "Click Here to go to Repository";
             this.btnCommitHistory.UseVisualStyleBackColor = true;
             this.btnCommitHistory.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
@@ -78,7 +83,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(57, 416);
+            this.materialLabel1.Location = new System.Drawing.Point(57, 472);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(88, 24);
@@ -89,7 +94,7 @@
             // 
             this.txtMessage.Depth = 0;
             this.txtMessage.Hint = "";
-            this.txtMessage.Location = new System.Drawing.Point(214, 416);
+            this.txtMessage.Location = new System.Drawing.Point(214, 472);
             this.txtMessage.MaxLength = 32767;
             this.txtMessage.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtMessage.Name = "txtMessage";
@@ -108,7 +113,7 @@
             this.btnCommit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCommit.Depth = 0;
             this.btnCommit.Icon = null;
-            this.btnCommit.Location = new System.Drawing.Point(404, 495);
+            this.btnCommit.Location = new System.Drawing.Point(404, 551);
             this.btnCommit.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCommit.Name = "btnCommit";
             this.btnCommit.Primary = true;
@@ -121,7 +126,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(141, 216);
+            this.pictureBox1.Location = new System.Drawing.Point(141, 272);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(264, 170);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -131,28 +136,13 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(934, 216);
+            this.pictureBox2.Location = new System.Drawing.Point(237, 607);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(264, 170);
+            this.pictureBox2.Size = new System.Drawing.Size(60, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
-            // 
-            // btnPush
-            // 
-            this.btnPush.AutoSize = true;
-            this.btnPush.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnPush.Depth = 0;
-            this.btnPush.Icon = null;
-            this.btnPush.Location = new System.Drawing.Point(1034, 416);
-            this.btnPush.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnPush.Name = "btnPush";
-            this.btnPush.Primary = true;
-            this.btnPush.Size = new System.Drawing.Size(67, 36);
-            this.btnPush.TabIndex = 7;
-            this.btnPush.Text = "Push";
-            this.btnPush.UseVisualStyleBackColor = true;
-            this.btnPush.Click += new System.EventHandler(this.btnPush_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // materialLabel2
             // 
@@ -160,7 +150,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(100, 169);
+            this.materialLabel2.Location = new System.Drawing.Point(106, 232);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(325, 24);
@@ -173,7 +163,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(964, 169);
+            this.materialLabel3.Location = new System.Drawing.Point(165, 659);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(207, 24);
@@ -285,17 +275,89 @@
             this.bugsToolStripMenuItem.Text = "Bugs";
             this.bugsToolStripMenuItem.Click += new System.EventHandler(this.bugsToolStripMenuItem_Click);
             // 
+            // btnHistory
+            // 
+            this.btnHistory.AutoSize = true;
+            this.btnHistory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnHistory.Depth = 0;
+            this.btnHistory.Icon = null;
+            this.btnHistory.Location = new System.Drawing.Point(875, 580);
+            this.btnHistory.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Primary = true;
+            this.btnHistory.Size = new System.Drawing.Size(166, 36);
+            this.btnHistory.TabIndex = 15;
+            this.btnHistory.Text = "Commit History";
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
+            // textHistory
+            // 
+            this.textHistory.Location = new System.Drawing.Point(627, 132);
+            this.textHistory.Name = "textHistory";
+            this.textHistory.Size = new System.Drawing.Size(630, 442);
+            this.textHistory.TabIndex = 16;
+            // 
+            // RefreshHistory
+            // 
+            this.RefreshHistory.Image = ((System.Drawing.Image)(resources.GetObject("RefreshHistory.Image")));
+            this.RefreshHistory.Location = new System.Drawing.Point(929, 95);
+            this.RefreshHistory.Name = "RefreshHistory";
+            this.RefreshHistory.Size = new System.Drawing.Size(60, 31);
+            this.RefreshHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.RefreshHistory.TabIndex = 17;
+            this.RefreshHistory.TabStop = false;
+            this.RefreshHistory.Click += new System.EventHandler(this.RefreshHistory_Click);
+            // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.Icon = null;
+            this.materialFlatButton1.Location = new System.Drawing.Point(184, 126);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = false;
+            this.materialFlatButton1.Size = new System.Drawing.Size(188, 36);
+            this.materialFlatButton1.TabIndex = 18;
+            this.materialFlatButton1.Text = "Select Local Repo";
+            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            // 
+            // lblLocalFolder
+            // 
+            this.lblLocalFolder.Depth = 0;
+            this.lblLocalFolder.Hint = "";
+            this.lblLocalFolder.Location = new System.Drawing.Point(43, 171);
+            this.lblLocalFolder.MaxLength = 32767;
+            this.lblLocalFolder.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblLocalFolder.Name = "lblLocalFolder";
+            this.lblLocalFolder.PasswordChar = '\0';
+            this.lblLocalFolder.SelectedText = "";
+            this.lblLocalFolder.SelectionLength = 0;
+            this.lblLocalFolder.SelectionStart = 0;
+            this.lblLocalFolder.Size = new System.Drawing.Size(532, 28);
+            this.lblLocalFolder.TabIndex = 19;
+            this.lblLocalFolder.TabStop = false;
+            this.lblLocalFolder.UseSystemPasswordChar = false;
+            // 
             // GitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.lblLocalFolder);
+            this.Controls.Add(this.materialFlatButton1);
+            this.Controls.Add(this.RefreshHistory);
+            this.Controls.Add(this.textHistory);
+            this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.menubar);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.btnPush);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCommit);
@@ -305,11 +367,13 @@
             this.Name = "GitForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GitForm";
+            this.Load += new System.EventHandler(this.GitForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.menubar.ResumeLayout(false);
             this.menubar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RefreshHistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,7 +387,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnCommit;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private MaterialSkin.Controls.MaterialRaisedButton btnPush;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -338,5 +401,10 @@
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem projectsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bugsToolStripMenuItem;
+        private MaterialSkin.Controls.MaterialRaisedButton btnHistory;
+        private ScintillaNET.Scintilla textHistory;
+        private System.Windows.Forms.PictureBox RefreshHistory;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField lblLocalFolder;
     }
 }

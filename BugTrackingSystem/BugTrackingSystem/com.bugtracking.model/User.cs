@@ -8,6 +8,7 @@ namespace BugTrackingSystem.com.bugtracking.model
 {
     class User
     {
+        //declaring the variables
         private int id;
         private string firstname;
         private string lastname;
@@ -19,16 +20,18 @@ namespace BugTrackingSystem.com.bugtracking.model
         private string dob;
         private string gender;
         
-
+        //constructor
         public User(string email)
         {
             this.email = email;
         }
+        //constructor
         public User(int id)
         {
             this.id = id;
         }
 
+        //constructor
         public User(int id, string firstname, string lastname, string email1, string password, string address, string userrole)
         {
             this.id = id;
@@ -40,6 +43,7 @@ namespace BugTrackingSystem.com.bugtracking.model
             this.userrole = userrole;
         }
 
+        //constructor
         public User(string firstname, string lastname, string email1, string password, string address, string gender, string userrole, string dob)
         {
             this.firstname = firstname;
@@ -52,6 +56,7 @@ namespace BugTrackingSystem.com.bugtracking.model
             this.dob = dob;
         }
 
+        //constructor
         public User(int id, string firstname, string lastname, string usertype, string userrole, string email, string password, string address, string dob, string gender)
         {
             this.id = id;
@@ -67,6 +72,7 @@ namespace BugTrackingSystem.com.bugtracking.model
             this.gender = gender;
         }
 
+        //getter setter method
         public int Id { get => id; set => id = value; }
         public string Firstname { get => firstname; set => firstname = value; }
         public string Lastname { get => lastname; set => lastname = value; }

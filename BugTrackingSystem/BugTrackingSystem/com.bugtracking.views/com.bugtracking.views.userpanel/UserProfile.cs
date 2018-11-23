@@ -36,6 +36,9 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             loadData();
         }
 
+        /// <summary>
+        /// Loading user data in the form 
+        /// </summary>
         public void loadData() {
 
             Console.WriteLine(this.email);
@@ -58,6 +61,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             this.Hide();
         }
 
+        /// <summary>
+        /// method to update user info in the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             String firstname = txtFirstName.Text;

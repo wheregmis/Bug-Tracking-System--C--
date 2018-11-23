@@ -37,6 +37,7 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
             loadData();
         }
 
+        //loading projects in the listview
         public void loadData()
         {
             listProjects.Clear();
@@ -58,11 +59,13 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
             }
         }
 
+        //method to make form empty
         private void btnEmpty_Click(object sender, EventArgs e)
         {
             EmptyForm();
         }
 
+        //method to add project and storing the value in the model
         private void btnAdd_Click(object sender, EventArgs e)
         {
             String projectName = txtProjectName.Text;
@@ -70,12 +73,13 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
             String EndDate = endDate.Value.Date.ToString("yyyy-MM-dd");
 
             Project p = new Project(projectName, StartDate, EndDate);
-            new ProjectController().insertProjects(p);
+            new ProjectController().InsertProjects(p);
             listProjects.Clear();
             loadData();
 
         }
 
+        //method to update project and storing the value in the model
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             String projectName = txtProjectName.Text;
@@ -89,6 +93,7 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
             
         }
 
+        //method to fill the form when double clicked on the listview
         private void listProjects_DoubleClick(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(listProjects.FocusedItem.SubItems[0].Text);
@@ -112,6 +117,7 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
             endDate.Value = DateTime.UtcNow.Date;
         }
 
+        //method to delete project
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Project p = new Project(this.projectID);
@@ -122,7 +128,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
 
@@ -140,7 +150,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)

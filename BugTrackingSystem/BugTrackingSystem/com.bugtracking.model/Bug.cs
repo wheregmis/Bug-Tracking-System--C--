@@ -9,6 +9,7 @@ namespace BugTrackingSystem.com.bugtracking.model
 {
     class Bug
     {
+        //declaring the variables
         private int bugID;
         private string bugTitle;
         private string project;
@@ -25,6 +26,7 @@ namespace BugTrackingSystem.com.bugtracking.model
         private object reportedBy;
         private object resolvedBy;
 
+        //parameterized constructor
         public Bug(string bugTitle, string project, string line, string method, string bugClass, string notes, string code, Image file, string priority, string date, string reportedBy)
         {
             this.bugTitle = bugTitle;
@@ -39,7 +41,7 @@ namespace BugTrackingSystem.com.bugtracking.model
             this.date = date;
             this.reportedBy = reportedBy;
         }
-
+        //parameterized constructor
         public Bug(int bugID, string bugTitle, string project, string line, string method, string bugClass, string notes, string code, Image file, string priority, string date, string reportedBy)
         {
             this.bugID = bugID;
@@ -55,7 +57,7 @@ namespace BugTrackingSystem.com.bugtracking.model
             this.date = date;
             this.reportedBy = reportedBy;
         }
-
+        //parameterized constructor
         public Bug(string bugTitle, string project, string line, string method, string bugClass, string notes, string code, Image file, string priority, object resolved, object comments, string date, object reportedBy, object resolvedBy)
         {
             this.BugTitle = bugTitle;
@@ -74,6 +76,7 @@ namespace BugTrackingSystem.com.bugtracking.model
             this.ResolvedBy = resolvedBy;
         }
 
+        //getter setter method
         public int BugID { get => bugID; set => bugID = value; }
         public string BugTitle { get => bugTitle; set => bugTitle = value; }
         public string Project { get => project; set => project = value; }

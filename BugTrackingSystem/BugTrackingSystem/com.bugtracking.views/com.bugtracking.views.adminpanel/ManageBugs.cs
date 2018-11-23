@@ -55,6 +55,8 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
             btnDelete.Visible = true;
         }
 
+
+        //method to load bugs into the list view
         public void loadData()
         {
             listBugs.Clear();
@@ -76,22 +78,30 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
             }
         }
 
+
+        //adding action to open bug detail when double clicked on the list view
         private void listBugs_DoubleClick(object sender, EventArgs e)
         {
             int bugID = Convert.ToInt32(listBugs.FocusedItem.SubItems[0].Text);
             Console.WriteLine(bugID);
 
-            this.Hide();
+           
              new BugDetail(bugID, this.email).Show();
-
+             
 
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
+        //method to delete bug
+        //only visible to admin only
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int bugID = Convert.ToInt32(listBugs.FocusedItem.SubItems[0].Text);
@@ -114,7 +124,11 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult res = MessageBox.Show("Are you sure you want to exit the System??", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)

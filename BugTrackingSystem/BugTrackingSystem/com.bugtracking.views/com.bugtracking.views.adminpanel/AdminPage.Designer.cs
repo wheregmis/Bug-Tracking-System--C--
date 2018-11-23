@@ -152,7 +152,7 @@
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(12, 142);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(110, 116);
+            this.pictureBox4.Size = new System.Drawing.Size(110, 96);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
@@ -161,9 +161,9 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1206, 129);
+            this.pictureBox5.Location = new System.Drawing.Point(1195, 129);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(59, 52);
+            this.pictureBox5.Size = new System.Drawing.Size(70, 52);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 7;
             this.pictureBox5.TabStop = false;
@@ -201,7 +201,7 @@
             this.lblProfile.Depth = 0;
             this.lblProfile.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblProfile.Location = new System.Drawing.Point(33, 261);
+            this.lblProfile.Location = new System.Drawing.Point(33, 241);
             this.lblProfile.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblProfile.Name = "lblProfile";
             this.lblProfile.Size = new System.Drawing.Size(66, 24);
@@ -226,7 +226,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(1202, 184);
+            this.materialLabel1.Location = new System.Drawing.Point(1191, 184);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(76, 24);
@@ -262,21 +262,21 @@
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -291,7 +291,7 @@
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
             this.profileToolStripMenuItem.Text = "Profile";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
@@ -308,21 +308,21 @@
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.usersToolStripMenuItem.Text = "Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // projectsToolStripMenuItem
             // 
             this.projectsToolStripMenuItem.Name = "projectsToolStripMenuItem";
-            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.projectsToolStripMenuItem.Text = "Projects";
             this.projectsToolStripMenuItem.Click += new System.EventHandler(this.projectsToolStripMenuItem_Click);
             // 
             // bugsToolStripMenuItem
             // 
             this.bugsToolStripMenuItem.Name = "bugsToolStripMenuItem";
-            this.bugsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.bugsToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.bugsToolStripMenuItem.Text = "Bugs";
             this.bugsToolStripMenuItem.Click += new System.EventHandler(this.bugsToolStripMenuItem_Click);
             // 
@@ -349,7 +349,7 @@
             this.Name = "AdminPage";
             this.Padding = new System.Windows.Forms.Padding(0, 60, 0, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminPage";
+            this.Text = "Admin Dashboard";
             ((System.ComponentModel.ISupportInitialize)(this.manageUsersPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManageProjectsPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManageBugsPic)).EndInit();

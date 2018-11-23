@@ -372,7 +372,7 @@
             this.btnView.Depth = 0;
             this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 4.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnView.Icon = null;
-            this.btnView.Location = new System.Drawing.Point(572, 483);
+            this.btnView.Location = new System.Drawing.Point(571, 478);
             this.btnView.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnView.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnView.Name = "btnView";

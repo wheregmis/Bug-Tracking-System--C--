@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BugTrackingSystem.com.bugtracking.controller
 {
@@ -34,6 +35,7 @@ namespace BugTrackingSystem.com.bugtracking.controller
             Console.WriteLine(query);
             new Database().InsertData(query);
 
+            MessageBox.Show("User Sucessfully Inserted");
         }
 
         //method to update user
@@ -41,6 +43,7 @@ namespace BugTrackingSystem.com.bugtracking.controller
             string query = "UPDATE `tbl_users` SET `firstName` = '"+u.Firstname+"', `lastName` = '"+u.Lastname+"', `userRole` = '"+u.Userrole+"', `userEmail` = '"+u.Email+"', `userPassword` = '"+u.Password+"', `userAddress` = '"+u.Address+"' WHERE `userID` = '"+u.Id+"'";
             Console.WriteLine(query);
            new Database().UpdateData(query);
+            MessageBox.Show("User Sucessfully Updated");
         }
 
         //method to delete user
@@ -48,6 +51,7 @@ namespace BugTrackingSystem.com.bugtracking.controller
             string query = "Delete from tbl_users where userID = " + u.Id;
             Console.WriteLine(query);
             new Database().DeleteData(query);
+            MessageBox.Show("User Sucessfully Deleted");
         }
 
     }

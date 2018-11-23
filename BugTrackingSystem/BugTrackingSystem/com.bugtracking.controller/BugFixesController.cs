@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BugTrackingSystem.com.bugtracking.controller
 {
@@ -36,6 +37,7 @@ namespace BugTrackingSystem.com.bugtracking.controller
             string query = "INSERT INTO `tbl_fixes` (`bugfixesID`, `bugFix`, `resolvedBy`, `comments`, `bugID`, `resolvedDate`) VALUES (NULL, '"+fx.ResolveCode+"', '"+fx.ResolvedBy+"', '"+fx.Comments+"', '"+fx.BugID+"', '"+fx.ResolvedDate+"')";
              new Database().InsertData(query);
             Console.WriteLine(query);
+            MessageBox.Show("Bug Fix Sucessfully Inserted");
         }
 
         //method to update that if the bug fix worked or not(bug fix status)
@@ -43,6 +45,7 @@ namespace BugTrackingSystem.com.bugtracking.controller
             string query = "UPDATE `tbl_fixes` SET `fixStatus` = '"+status+"' WHERE `tbl_fixes`.`bugfixesID` = "+bugID;
             new Database().UpdateData(query);
             Console.WriteLine(query);
+            MessageBox.Show("Bug Fix Status Sucessfully Updated");
         }
     }
 }

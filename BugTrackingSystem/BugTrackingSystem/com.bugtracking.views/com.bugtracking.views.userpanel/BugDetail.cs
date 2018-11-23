@@ -101,7 +101,7 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             byte[] img = (byte[])dt.Rows[0][8];
             this.File = byteArrayToImage(img);
             picScreenshot.Image = this.File;
-            this.reportedBy = txtNotes.Text = dt.Rows[0].Field<String>("reportedBy");
+            this.reportedBy = dt.Rows[0].Field<String>("reportedBy");
 
             //if the user is the one who reported the bug he cant resolve the issue
             if (this.reportedBy == this.email) {
@@ -173,7 +173,6 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             radioWorked.Checked = false;
             radioNotWork.Checked = false;
            
-
             if (this.status == "It Worked")
             {
                 radioWorked.Checked = true;
@@ -182,7 +181,6 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.userpane
             if (this.status == "It Doesnt Work")
             {
                 radioNotWork.Checked = true;
-
             }
 
             //if the user is the one who reported the bug he will be able to update the status of bug fixes if it worked or not

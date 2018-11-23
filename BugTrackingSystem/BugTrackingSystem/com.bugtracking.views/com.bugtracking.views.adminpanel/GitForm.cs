@@ -39,6 +39,20 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
            
         }
 
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    lblLocalFolder.Text = fbd.SelectedPath;
+                    this.localFolder = fbd.SelectedPath;
+                }
+            }
+        }
+
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/xawbeenregmi/Bug-Tracking-System--C--");
@@ -158,19 +172,7 @@ namespace BugTrackingSystem.com.bugtracking.views.com.bugtracking.views.adminpan
             textHistory.ReadOnly = true;
         }
 
-        private void materialFlatButton1_Click(object sender, EventArgs e)
-        {
-            using (var fbd = new FolderBrowserDialog())
-            {
-                DialogResult result = fbd.ShowDialog();
-
-                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
-                {
-                    lblLocalFolder.Text = fbd.SelectedPath;
-                    this.localFolder = fbd.SelectedPath;
-                }
-            }
-        }
+        
     }
 
     public class ControlWriter : TextWriter

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BugTrackingSystem.com.bugtracking.model;
+using System.Windows.Forms;
 
 namespace BugTrackingSystem.com.bugtracking.controller
 {
@@ -25,12 +26,14 @@ namespace BugTrackingSystem.com.bugtracking.controller
         public void InsertProjects(Project p) {
             String query = "INSERT INTO `tbl_projects` (`projectID`, `projectName`, `startDate`, `endDate`) VALUES (NULL, '"+p.ProjectName+"', '"+p.StartDate+"', '"+p.EndDate+"');";
             new Database().InsertData(query);
+            MessageBox.Show("Projects Sucessfully Inserted");
         }
 
         //method to update project
         public void UpdateProject(Project p) {
             String query = "UPDATE `tbl_projects` SET `projectName` = '"+p.ProjectName+"', `startDate` = '"+p.StartDate+"', `endDate` = '"+p.EndDate+"' WHERE `tbl_projects`.`projectID` = "+p.ProjectID;
             new Database().UpdateData(query);
+            MessageBox.Show("Projects Sucessfully Updated");
         }
 
         //method to delete project
@@ -38,6 +41,7 @@ namespace BugTrackingSystem.com.bugtracking.controller
             string query = "Delete from tbl_projects where projectID = " + p.ProjectID;
             Console.WriteLine(query);
             new Database().DeleteData(query);
+            MessageBox.Show("Projects Sucessfully Deleted");
         }
 
         //method to get project details

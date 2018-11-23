@@ -20,49 +20,6 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
         MySqlConnection databaseConnection = new MySqlConnection("datasource=localhost;username=root;password=;database=bugtrackingsystem;");
 
 
-        //listing user
-        public void ListUsers()
-        {
-
-            // Select all
-            string query = "SELECT * FROM users";
-
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
-            MySqlDataReader reader;
-
-            try
-            {
-                databaseConnection.Open();
-                reader = commandDatabase.ExecuteReader();
-                // Success, now list 
-
-                // If there are available rows
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-
-                        Console.WriteLine(reader.GetInt64(0) + " - " + reader.GetString(1) + " - " + reader.GetString(2) + " - " + reader.GetString(3));
-                        // Example to save in the listView1 :
-                        //string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3) };
-                        //var listViewItem = new ListViewItem(row);
-                        //listView1.Items.Add(listViewItem);
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No rows found.");
-                }
-
-                databaseConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         //validating login and userrole
         public String LoginValidate(String email, String password) {
 
@@ -137,10 +94,7 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
             {
                 databaseConnection.Open();
                 MySqlDataReader myReader = commandDatabase.ExecuteReader();
-
-                MessageBox.Show("User succesfully registered");
-
-                databaseConnection.Close();
+                 databaseConnection.Close();
             }
             catch (Exception ex)
             {
@@ -158,9 +112,6 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
             {
                 databaseConnection.Open();
                 MySqlDataReader myReader = commandDatabase.ExecuteReader();
-
-                MessageBox.Show("User succesfully Updated");
-
                 databaseConnection.Close();
             }
             catch (Exception ex)
@@ -179,9 +130,6 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
             {
                 databaseConnection.Open();
                 MySqlDataReader myReader = commandDatabase.ExecuteReader();
-
-                MessageBox.Show("User succesfully Updated");
-
                 databaseConnection.Close();
             }
             catch (Exception ex)
@@ -202,9 +150,6 @@ namespace BugTrackingSystem.com.bugtracking.dbconnection
             {
                 databaseConnection.Open();
                 MySqlDataReader myReader = commandDatabase.ExecuteReader();
-
-                MessageBox.Show("User succesfully registered");
-
                 databaseConnection.Close();
             }
             catch (Exception ex)

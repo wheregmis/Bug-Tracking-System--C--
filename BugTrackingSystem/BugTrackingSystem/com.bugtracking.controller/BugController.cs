@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using BugTrackingSystem.com.bugtracking.dbconnection;
 using BugTrackingSystem.com.bugtracking.model;
 
@@ -26,6 +27,7 @@ namespace BugTrackingSystem.com.bugtracking.controller
 
             //calling insertBug method to insert bug that is in database class
             new Database().InsertBug(query, img);
+            MessageBox.Show("Bug Sucessfully Inserted");
         }
 
         public DataTable GetAllBugs()
@@ -66,6 +68,7 @@ namespace BugTrackingSystem.com.bugtracking.controller
             string query = "UPDATE `tbl_bugs` SET `bugTitle` = '"+b.BugTitle+"', `project` = '"+b.Project+"', `line` = '"+b.Line+"', `method` = '"+b.Method+"', `class` = '"+b.BugClass+"', `notes` = '"+b.Notes+"', `sourceCode` = '"+b.Code+"', `priority` = '"+b.Priority+"', `screenshot` = @img WHERE `tbl_bugs`.`bugID` =" + b.BugID;
             Console.WriteLine(query);
             new Database().InsertBug(query, img);
+            MessageBox.Show("Bug Sucessfully Updated");
         }
 
         //method to fill combobox show projects from database
@@ -81,6 +84,7 @@ namespace BugTrackingSystem.com.bugtracking.controller
         {
             String query = "delete from tbl_bugs where bugID = "+bugID;
             new Database().DeleteData(query);
+            MessageBox.Show("Bug Sucessfully Deleted");
         }
 
         //method to update bug status in bug table
@@ -89,6 +93,7 @@ namespace BugTrackingSystem.com.bugtracking.controller
             string query = "UPDATE `tbl_bugs` SET `bugStatus` = 'Fixed' WHERE `tbl_bugs`.`bugID` =" + bugID;
             Console.WriteLine(query);
             new Database().InsertData(query);
+            MessageBox.Show("Status Sucessfully Updated");
         }
     }
 }
